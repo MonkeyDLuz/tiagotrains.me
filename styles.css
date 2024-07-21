@@ -1,62 +1,63 @@
 /* styles.css */
 .top-menu {
-    background-color: #ffffff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	background-color: #ffffff;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .top-menu .logo {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .top-menu .logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
 }
 
 .top-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
 }
 
 .top-menu ul li {
-    margin-left: 20px;
+	margin-left: 20px;
 }
 
 .top-menu ul li a {
-    color: #DA6E65;
-    text-decoration: none;
-    font-weight: bold;
+	color: #da6e65;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 /* For mobile responsiveness */
 @media (max-width: 768px) {
-    .top-menu {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+	.top-menu {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 
-    .top-menu ul {
-        margin-top: 10px;
-    }
+	.top-menu ul {
+		margin-top: 10px;
+	}
 
-    .top-menu ul li {
-        margin-left: 0;
-        margin-right: 20px;
-    }
+	.top-menu ul li {
+		margin-left: 0;
+		margin-right: 20px;
+	}
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+	background-image: url(/Images/Black_Background.jpg);
+	font-family: "Rubic", sans-serif;
 	margin: 0;
 	padding: 0;
-	color: #000000;
+	color: #ffffff;
 }
 
 header {
