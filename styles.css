@@ -1,6 +1,5 @@
 /* styles.css */
 .top-menu {
-	background-color: #ffffff;
 	padding: 10px 20px;
 	display: flex;
 	justify-content: space-between;
@@ -52,6 +51,12 @@
 	}
 }
 
+
+
+
+
+
+
 body {
 	background-image: url(/Images/Black_Background.jpg);
 	font-family: "Rubic", sans-serif;
@@ -61,7 +66,6 @@ body {
 }
 
 header {
-	background-color: #000000;
 	color: #ffffff;
 	padding: 1rem;
 }
@@ -87,7 +91,7 @@ main {
 
 .hero {
 	position: relative;
-	height: 100vh;
+	height: 70vh;
 	display: flex;
 	align-items: flex-end;
 	padding: 50px;
@@ -171,6 +175,84 @@ main {
 	color: white;
 	border: 2px solid white;
 }
+
+.membership-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 20px;
+}
+
+.membership-option {
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+	color: black;
+	position: relative;
+}
+
+.membership-option img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 15px;
+}
+
+.membership-option h2 {
+	font-size: 1.2em;
+	margin-bottom: 15px;
+}
+
+.membership-option ul {
+	list-style-type: none;
+	padding: 0;
+	text-align: left;
+	color: black;
+}
+
+.membership-option li {
+	margin-bottom: 10px;
+	color: black;
+}
+
+.membership-option.highlighted {
+	border: 2px solid #e63946;
+}
+
+.membership-option.best-value {
+	border: 2px solid #4caf50;
+}
+
+.banner {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #e63946;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 0.8em;
+}
+
+.best-value .banner {
+	background-color: #4caf50;
+}
+
+@media (max-width: 1200px) {
+	.membership-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.membership-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+
+
 
 footer {
 	background-color: #f5f5f5;
