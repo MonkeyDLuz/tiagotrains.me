@@ -12,8 +12,8 @@
 }
 
 .top-menu .logo img {
-	width: 50px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	object-fit: contain;
 }
 
@@ -32,6 +32,30 @@
 	color: #da6e65;
 	text-decoration: none;
 	font-weight: bold;
+	position: relative;
+	padding-bottom: 5px;
+	font-size: 20px;
+}
+
+.top-menu ul li a::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #da6e65;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.top-menu ul li a:hover::after,
+.top-menu ul li a.current::after {
+    transform: scaleX(1);
+}
+
+.top-menu ul li a.current {
+	color: #ffffff; /* Change this to your preferred highlight color */
 }
 
 /* For mobile responsiveness */
@@ -88,7 +112,49 @@ nav ul li a {
 main {
 	padding: 2rem;
 }
+.main-aboutme {
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
 
+h1 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.about-content {
+	display: flex;
+	align-items: flex-start;
+	gap: 2rem;
+}
+
+.image-container {
+	flex: 1;
+	max-width: 50%;
+}
+
+.image-container img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.text-container {
+	flex: 1;
+}
+
+@media (max-width: 768px) {
+	.about-content {
+			flex-direction: column;
+	}
+
+	.image-container {
+			max-width: 100%;
+			margin-bottom: 1rem;
+	}
+}
 .hero {
 	position: relative;
 	height: 70vh;
@@ -250,6 +316,60 @@ main {
 	}
 }
 
+
+
+
+.contact-container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+input, textarea {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: #f8f8f8;
+	color: #333;
+}
+
+textarea {
+	height: 150px;
+	resize: vertical;
+}
+
+button[type="submit"] {
+	align-self: flex-start;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+	background-color: #c62828;
+}
+
+@media (max-width: 768px) {
+	.contact-container {
+			padding: 10px;
+	}
+}
 
 
 
