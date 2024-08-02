@@ -9,6 +9,10 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 	</head>
 	<body>
 		<header>
@@ -45,26 +49,30 @@
 						<label for="message">Message</label>
 						<textarea id="message" name="message" required></textarea>
 					</div>
-					<button type="submit" class="cta-button primary">Send Message</button>
+					<button type="button" id="emailButton" class="cta-button primary">Send Email</button>
 				</form>
 			</div>
 		</main>
+		
+		<script>
+			document.getElementById('emailButton').addEventListener('click', function(e) {
+				e.preventDefault();
+				const email = 'example@example.com'; // Replace with the predetermined email address
+				const subject = 'Contact Request'; // Replace with your subject
+				const body = 'Hello,\n\nI would like to get in touch with you.'; // Replace with your predetermined message
+				
+				const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+				
+				window.location.href = mailtoLink;
+			});
+		</script>
 
 		<footer>
 			<div class="footer-content">
 				<div class="footer-section">
 					<h3>COMPANY</h3>
 					<ul>
-						<li><a href="#">Employee Wellness</a></li>
-						<li><a href="#">Media</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="#">Privacy Notice</a></li>
-						<li><a href="#">Consumer Health Privacy Notice (Washington)</a></li>
-						<li><a href="#">DMCA Policy</a></li>
-						<li><a href="#">Terms & Conditions</a></li>
-						<li><a href="#">Promotions Terms & Conditions</a></li>
-						<li><a href="#">Text Messaging Terms</a></li>
-						<li>
+						
 							<a href="#"
 								>Continued Operations, Accessibility And Maintenance</a
 							>
@@ -93,21 +101,18 @@
 					</ul>
 				</div>
 				<div class="footer-social">
-					<a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
-					<a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
-					<a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
-					<a href="#"><img src="pinterest-icon.png" alt="Pinterest" /></a>
-					<a href="#"><img src="youtube-icon.png" alt="YouTube" /></a>
-					<a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /></a>
+					<a href="#"><img src="/Images/facebook.png" alt="Facebook" /></a>
+					<a href="#"><img src="/Images/instagram.png" alt="Instagram" /></a>
+					<a href="#"><img src="/Images/linkedin.png" alt="LinkedIn" /></a>
 				</div>
 			</div>
 			<div class="footer-bottom">
-				<img src="self-esteem-logo.png" alt="Self Esteem Brands Logo" />
+				<img src="/Images/Tiago.png" alt="Self Esteem Brands Logo" width="50" height="50"/>
 				<p>
 					People, Purpose, Profits, Play®<br />A Self Esteem Brands® company
 				</p>
 				<p>© Anytime Fitness Franchisor, LLC 2024. All rights reserved.</p>
-				<img src="allyant-logo.png" alt="Allyant Logo" />
+				<img src="allyant-logo.png" alt="Allyant Logo" id="logo-footer"/>
 				<a href="#">Cookie Settings</a>
 			</div>
 		</footer>

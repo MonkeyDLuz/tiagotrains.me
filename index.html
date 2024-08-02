@@ -9,9 +9,14 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="styles.css" />
-		<script src="script.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js" defer></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
-	<body>
+	<body data-aos="fade-in">
 		<header>
 			<nav class="top-menu">
 				<a href="index.html" class="logo">
@@ -26,8 +31,8 @@
 			</nav>
 		</header>
 
-		<main>
-			<section class="hero">
+		<main class="main-index">
+			<section class="hero" class="hero-section">
 				<div class="video-background">
 					<video autoplay loop muted playsinline>
 						<source src="/Videos/TTM intro.mp4" type="video/mp4" />
@@ -48,31 +53,86 @@
 					</div>
 				</div>
 			</section>
-			<section id="trainer-info">
+			<section id="trainer-info" data-aos="fade-up" data-aos-duration="1000">
 				<h1>Welcome to Your Personal Training Journey</h1>
 				<p>
-					I'm [Your Name], your dedicated personal trainer. Let's achieve your
-					fitness goals together!
+					Tiago Santos, a dedicated personal trainer hailing from the
+					picturesque island of Madeira, has carved a niche for himself in the
+					vibrant city of Oslo. His journey began with a deep passion for
+					sports, leading him to earn both a Bachelor’s and a Master’s in Sport
+					Sciences. With a solid educational foundation, Tiago set out to
+					transform lives through fitness. Upon moving to Oslo, Tiago’s
+					reputation quickly grew, thanks to his unique ability to connect with
+					clients on a personal level. His extensive experience is peppered with
+					inspiring success stories, from athletes overcoming injuries to
+					everyday individuals reclaiming their strength and vitality. Tiago’s
+					clients often find themselves surprised at the progress they make
+					under his guidance, whether it’s through personalized workout plans or
+					his motivational coaching style.
 				</p>
 			</section>
 
-			<section id="membership-info">
-				<h2>Our Memberships</h2>
-				<p>
-					We offer various membership options to suit your needs and goals.
-					Check out our Memberships page for more details!
-				</p>
-			</section>
-
-			<section id="testimonials">
-				<h2>What Our Clients Say</h2>
-				<blockquote>
-					"[Your Name] helped me achieve my fitness goals in just 3 months!" -
-					Jane D.
-				</blockquote>
-				<blockquote>
-					"The best personal trainer I've ever had!" - John S.
-				</blockquote>
+			<section id="memberships">
+				<h2>Memberships</h2>
+				<div class="membership-grid">
+					<div class="membership-item" data-aos="fade-right" data-aos-duration="800">
+						<div class="membership-content">
+							<h3>Diet Plan</h3>
+							<p>
+								The Abel app's diet plan feature offers personalized nutrition guidance 
+								tailored to individual health goals and preferences. Users start by 
+								inputting their dietary needs, health conditions, and goals. Abel then 
+								generates customized meal plans, complete with recipes and grocery lists. 
+								The app provides daily reminders, tracks nutritional intake, and offers tips 
+								for healthy eating. Users can also consult with dietitians through the app 
+								for additional support, ensuring they stay on track and make informed 
+								dietary choices. This seamless integration of technology and expert advice 
+								makes maintaining a healthy diet easier and more effective.
+							</p>
+						</div>
+						<div class="membership-image" data-aos="zoom-in" data-aos-delay="300">
+							<img src="/Images/Abel_1.png" alt="Diet Plan App Screenshot" />
+						</div>
+					</div>
+					<div class="membership-item" data-aos="fade-left" data-aos-duration="800">
+						<div class="membership-image" data-aos="zoom-in" data-aos-delay="300">
+							<img
+								src="/Images/Abel_2.png"
+								alt="Training Plan App Screenshot"
+							/>
+						</div>
+						<div class="membership-content">
+							<h3>Detailed Training Plan</h3>
+							<p>
+								Abel's training feature delivers personalized workout plans designed to meet users' 
+								fitness goals and levels. Users begin by setting their fitness objectives and 
+								preferences. The app then creates tailored exercise routines, complete with detailed
+								 instructions and video demonstrations. Abel tracks progress, offers real-time feedback, 
+								 and adjusts plans based on performance and feedback. Users can also connect with personal 
+								 trainers for virtual sessions and additional guidance. This dynamic approach ensures 
+								 an engaging and effective fitness journey, helping users stay motivated and achieve 
+								 their goals efficiently.
+							</p>
+						</div>
+					</div>
+					<div class="membership-item" data-aos="fade-right" data-aos-duration="800">
+						<div class="membership-content">
+							<h3>Consultation</h3>
+							<p>
+								Join Tiago Santos' fitness program today and unlock personalized support with 
+								a consultation videocall included in your membership! Depending on your chosen 
+								plan, enjoy tailored advice, progress check-ins, and expert guidance directly from 
+								Tiago. Whether you need help starting your fitness journey, overcoming an injury, or 
+								achieving specific goals, Tiago's videocall consultations provide the motivation and 
+								expertise you need. Sign up now to experience a transformative fitness journey with 
+								direct access to one of Oslo's top personal trainers!
+							</p>
+						</div>
+						<div class="membership-image" data-aos="zoom-in" data-aos-delay="300">
+							<img src="/Images/Consultation.png" alt="Consultation Setup" />
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
 
@@ -81,16 +141,7 @@
 				<div class="footer-section">
 					<h3>COMPANY</h3>
 					<ul>
-						<li><a href="#">Employee Wellness</a></li>
-						<li><a href="#">Media</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="#">Privacy Notice</a></li>
-						<li><a href="#">Consumer Health Privacy Notice (Washington)</a></li>
-						<li><a href="#">DMCA Policy</a></li>
-						<li><a href="#">Terms & Conditions</a></li>
-						<li><a href="#">Promotions Terms & Conditions</a></li>
-						<li><a href="#">Text Messaging Terms</a></li>
-						<li>
+						
 							<a href="#"
 								>Continued Operations, Accessibility And Maintenance</a
 							>
@@ -119,21 +170,17 @@
 					</ul>
 				</div>
 				<div class="footer-social">
-					<a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
-					<a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
-					<a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
-					<a href="#"><img src="pinterest-icon.png" alt="Pinterest" /></a>
-					<a href="#"><img src="youtube-icon.png" alt="YouTube" /></a>
-					<a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /></a>
+					<a href="#"><img src="/Images/facebook.png" alt="Facebook" /></a>
+					<a href="#"><img src="/Images/instagram.png" alt="Instagram" /></a>
+					<a href="#"><img src="/Images/linkedin.png" alt="LinkedIn" /></a>
 				</div>
 			</div>
 			<div class="footer-bottom">
-				<img src="self-esteem-logo.png" alt="Self Esteem Brands Logo" />
+				<img src="/Images/Tiago.png" alt="Self Esteem Brands Logo" width="50" height="50"/>
 				<p>
 					People, Purpose, Profits, Play®<br />A Self Esteem Brands® company
 				</p>
 				<p>© Anytime Fitness Franchisor, LLC 2024. All rights reserved.</p>
-				<img src="allyant-logo.png" alt="Allyant Logo" />
 				<a href="#">Cookie Settings</a>
 			</div>
 		</footer>
