@@ -58,55 +58,66 @@
 	color: #ffffff; /* Change this to your preferred highlight color */
 }
 
+@media (max-width: 1024px) {
+	/* Styles for tablets and smaller desktops */
+	.top-menu ul li a {
+		font-size: 18px;
+	}
+
+	.hero h1 {
+		font-size: 42px;
+	}
+
+	.hero p {
+		font-size: 16px;
+	}
+
+	#trainer-info,
+	#membership-info,
+	#testimonials {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.membership-grid {
+		gap: 40px;
+	}
+
+	.membership-item {
+		flex-direction: column;
+	}
+
+	.membership-content,
+	.membership-image {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.membership-image img {
+		max-height: 350px;
+	}
+}
+
 /* For mobile responsiveness */
 @media (max-width: 768px) {
+	/* Styles for mobile devices */
 	.top-menu {
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 	}
 
-	.menu-toggle {
-		display: block;
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 10px;
-	}
-
-	.menu-toggle span {
-		display: block;
-		width: 25px;
-		height: 3px;
-		background-color: #da6e65;
-		margin: 5px 0;
-		transition: 0.4s;
-	}
-
-	.menu-toggle.active span:nth-child(1) {
-		transform: rotate(-45deg) translate(-5px, 6px);
-	}
-
-	.menu-toggle.active span:nth-child(2) {
-		opacity: 0;
-	}
-
-	.menu-toggle.active span:nth-child(3) {
-		transform: rotate(45deg) translate(-5px, -6px);
-	}
-
-	.nav-links {
-		display: none;
-		width: 100%;
-		text-align: center;
-	}
-
-	.nav-links.active {
-		display: flex;
+	.top-menu ul {
 		flex-direction: column;
+		align-items: center;
+		margin-top: 20px;
 	}
 
-	.nav-links li {
+	.top-menu ul li {
 		margin: 10px 0;
+	}
+
+	.top-menu ul li a {
+		font-size: 16px;
 	}
 
 	.hero {
@@ -114,16 +125,12 @@
 		padding: 30px;
 	}
 
-	.hero-content {
-		max-width: 100%;
-	}
-
 	.hero h1 {
 		font-size: 36px;
 	}
 
 	.hero p {
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 	.cta-buttons {
@@ -138,18 +145,20 @@
 	#trainer-info,
 	#membership-info,
 	#testimonials {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 3%;
+		padding-right: 3%;
 	}
 
-	.membership-item {
-		flex-direction: column;
+	.membership-grid {
+		gap: 30px;
 	}
 
-	.membership-content,
-	.membership-image {
-		width: 100%;
-		max-width: 100%;
+	.membership-content h3 {
+		font-size: 1.5em;
+	}
+
+	.membership-content p {
+		font-size: 1em;
 	}
 
 	.membership-image img {
@@ -163,6 +172,7 @@
 	.footer-section,
 	.footer-social {
 		margin-bottom: 20px;
+		text-align: center;
 	}
 
 	.footer-bottom {
@@ -170,34 +180,26 @@
 	}
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 480px) {
+	/* Styles for smaller mobile devices */
 	.hero h1 {
-		font-size: 42px;
+		font-size: 32px;
 	}
 
 	.hero p {
-		font-size: 17px;
+		font-size: 13px;
 	}
 
-	#trainer-info,
-	#membership-info,
-	#testimonials {
-		padding-left: 7%;
-		padding-right: 7%;
+	.membership-content h3 {
+		font-size: 1.3em;
 	}
 
-	.membership-item {
-		flex-direction: column;
-	}
-
-	.membership-content,
-	.membership-image {
-		width: 100%;
-		max-width: 100%;
+	.membership-content p {
+		font-size: 0.9em;
 	}
 
 	.membership-image img {
-		max-height: 300px;
+		max-height: 200px;
 	}
 }
 
