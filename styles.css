@@ -1,4 +1,6 @@
 /* styles.css */
+
+/*Menu*/
 .top-menu {
 	padding: 10px 20px;
 	display: flex;
@@ -265,7 +267,8 @@ h1 {
 }
 
 .image-container img {
-	width: 50%;
+	margin-top: 20px;
+	width: 80%;
 	height: auto;
 	object-fit: cover;
 	border-radius: 8px;
@@ -400,6 +403,8 @@ h1 {
 	font-size: 2.5em;
 }
 
+/*Membership*/
+
 .membership-grid {
 	display: flex;
 	flex-direction: column;
@@ -464,6 +469,13 @@ h1 {
 	.membership-image img {
 		max-height: 300px; /* Adjust for mobile if needed */
 	}
+}
+
+.membership-option-2 {
+	transition: transform 0.3s ease-in-out;
+}
+.membership-option-2:hover {
+	transform: scale(1.05);
 }
 
 .education-grid {
@@ -550,6 +562,8 @@ h1 {
 	}
 }
 
+/*Contact*/
+
 .contact-container {
 	max-width: 600px;
 	margin: 0 auto;
@@ -603,6 +617,8 @@ button[type="submit"]:hover {
 	}
 }
 
+/*FAQ*/
+
 .faq-container {
 	max-width: 800px;
 	margin: 0 auto;
@@ -642,30 +658,38 @@ h1 {
 	padding-right: 30px;
 	position: relative;
 	cursor: pointer;
-	--symbol: "+";
+	transition: color 0.3s ease;
 }
 
 .faq-item h2::after {
-	content: var(--symbol);
+	content: "+";
 	position: absolute;
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 24px;
 	color: #ffffff;
+	transition: transform 0.3s ease;
 }
 
-.faq-item:first-child h2 {
-	--symbol: "-";
+.faq-item h2.open::after {
+	content: "-";
+	transform: translateY(-50%) rotate(180deg);
 }
 
 .faq-item p {
 	margin-top: 10px;
 	font-size: 16px;
+	max-height: 1000px;
+	overflow: hidden;
+	transition: max-height 0.3s ease, opacity 0.3s ease;
+	opacity: 1;
 }
 
-.hidden {
-	display: none;
+.faq-item p.hidden {
+	max-height: 0;
+	margin-top: 0;
+	opacity: 0;
 }
 
 h1,
@@ -677,6 +701,8 @@ h6 {
 	font-family: "Lato", serif;
 	font-weight: 700;
 }
+
+/*Footer*/
 
 footer {
 	padding: 40px 20px;
@@ -690,10 +716,6 @@ footer {
 	margin: 0 auto;
 }
 
-.footer-section {
-	flex: 1;
-}
-
 .footer-section h3 {
 	font-size: 18px;
 	margin-bottom: 15px;
@@ -701,23 +723,16 @@ footer {
 
 .footer-section ul {
 	list-style-type: none;
-	padding: 0;
+	padding-top: 100px;
 }
 
 .footer-section ul li {
 	margin-bottom: 10px;
 }
 
-.footer-section ul li a {
-	color: #333;
-	text-decoration: none;
-	font-size: 14px;
-}
-
 .footer-social {
 	display: flex;
-	justify-content: flex-end;
-	align-items: flex-start;
+	align-items: center;
 }
 
 .footer-social a {
@@ -733,7 +748,7 @@ footer {
 	margin-top: 40px;
 	text-align: right;
 	font-size: 12px;
-	color: #666;
+	color: #ffffff;
 }
 
 .footer-bottom img {
@@ -742,7 +757,7 @@ footer {
 }
 
 .footer-bottom a {
-	color: #666;
+	color: #ffffff;
 	text-decoration: none;
 }
 
