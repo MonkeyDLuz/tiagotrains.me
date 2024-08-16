@@ -630,6 +630,41 @@ h1 {
 	.membership-grid-2 {
 		grid-template-columns: 1fr;
 	}
+
+	.membership-option-2 {
+		margin-bottom: 20px; /* Add space between stacked cards */
+	}
+
+	.membership-option-2 h2 {
+		font-size: 1.5em; /* Slightly larger font for mobile */
+	}
+
+	.membership-option-2 ul {
+		padding-left: 20px; /* Add some left padding for list items */
+	}
+
+	.membership-option-2 li {
+		text-align: left; /* Align list items to the left for better readability */
+	}
+
+	.more-info-btn {
+		padding: 15px; /* Larger touch target for mobile */
+		font-size: 1.1em; /* Slightly larger font for button */
+	}
+}
+
+@media (max-width: 480px) {
+	.membership-grid-2 {
+		padding: 10px; /* Reduce padding on smaller screens */
+	}
+
+	.membership-option-2 {
+		padding: 15px; /* Slightly reduce padding in cards */
+	}
+
+	.membership-option-2 h2 {
+		font-size: 1.3em; /* Further reduce heading size on very small screens */
+	}
 }
 
 /*Contact*/
