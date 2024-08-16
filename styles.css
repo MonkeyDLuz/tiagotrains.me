@@ -205,6 +205,54 @@
 	}
 }
 
+/*about me*/
+
+.background-education {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	color: #ffffff;
+	font-family: "Nunito Sans", sans-serif;
+}
+
+.education-column,
+.expertise-column {
+	width: 48%;
+}
+
+.expertise-item h3 {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.expertise-item p {
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.divider {
+	width: 1px;
+	background-color: #ffffff;
+	margin: 0 20px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 20px;
+}
+
 html,
 body {
 	width: 100%;
@@ -478,6 +526,23 @@ h1 {
 	transform: scale(1.05);
 }
 
+.more-info-btn {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-top: auto;
+	background-color: #da6e65;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.more-info-btn:hover {
+	background-color: #0056b3;
+}
+
 .education-grid {
 	display: inline-grid;
 	grid-template-columns: auto auto auto;
@@ -496,12 +561,16 @@ h1 {
 }
 
 .membership-option-2 {
+	display: flex;
+	flex-direction: column;
 	border-radius: 8px;
 	padding: 20px;
 	text-align: center;
 	color: rgb(255, 255, 255);
 	position: relative;
 	border: 2px solid #ffffff;
+	transition: transform 0.3s ease-in-out;
+	height: 100%; /* Ensure all cards have the same height */
 }
 
 .membership-option-2 img {
@@ -520,6 +589,7 @@ h1 {
 	padding: 0;
 	text-align: left;
 	color: rgb(255, 255, 255);
+	flex-grow: 1;
 }
 
 .membership-option-2 li {

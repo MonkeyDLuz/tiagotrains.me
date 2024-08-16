@@ -96,4 +96,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		window.location.href = mailtoLink;
 	}
+	const moreInfoButtons = document.querySelectorAll(".more-info-btn");
+	moreInfoButtons.forEach(button => {
+		button.addEventListener("click", function () {
+			const membershipType = this.getAttribute("data-membership");
+			const email = "example@example.com"; // Replace with your email address
+			const subject = `More Information About ${membershipType} Membership`;
+			const body = `Hello,\n\nI would like to get more information about the ${membershipType} membership option. Could you please provide me with additional details?\n\nThank you!`;
+
+			const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+				subject
+			)}&body=${encodeURIComponent(body)}`;
+			window.location.href = mailtoLink;
+		});
+	});
 });
