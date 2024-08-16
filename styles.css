@@ -570,7 +570,7 @@ h1 {
 	position: relative;
 	border: 2px solid #ffffff;
 	transition: transform 0.3s ease-in-out;
-	height: 100%; /* Ensure all cards have the same height */
+	height: 100%;
 }
 
 .membership-option-2 img {
@@ -623,47 +623,70 @@ h1 {
 @media (max-width: 1200px) {
 	.membership-grid-2 {
 		grid-template-columns: repeat(2, 1fr);
+		gap: 100px;
 	}
 }
 
 @media (max-width: 768px) {
 	.membership-grid-2 {
 		grid-template-columns: 1fr;
+		gap: 100px; /* Further increased gap for mobile */
+		padding: 20px; /* Adjusted padding around the grid */
 	}
 
 	.membership-option-2 {
-		margin-bottom: 20px; /* Add space between stacked cards */
+		padding: 30px; /* Increased padding inside each card for mobile */
+		margin-bottom: 0;
+		max-width: 100%;
 	}
 
 	.membership-option-2 h2 {
-		font-size: 1.5em; /* Slightly larger font for mobile */
+		font-size: 1.4em;
+		margin-bottom: 15px; /* Increased bottom margin for heading */
 	}
 
 	.membership-option-2 ul {
-		padding-left: 20px; /* Add some left padding for list items */
+		padding-left: 0;
+		margin-bottom: 20px; /* Increased bottom margin for list */
 	}
 
 	.membership-option-2 li {
-		text-align: left; /* Align list items to the left for better readability */
+		text-align: center;
+		margin-bottom: 10px; /* Increased space between list items */
 	}
 
 	.more-info-btn {
-		padding: 15px; /* Larger touch target for mobile */
-		font-size: 1.1em; /* Slightly larger font for button */
+		padding: 15px; /* Increased button padding */
+		font-size: 1em;
+	}
+
+	.banner {
+		font-size: 0.8em;
+		padding: 5px 10px;
 	}
 }
 
 @media (max-width: 480px) {
 	.membership-grid-2 {
-		padding: 10px; /* Reduce padding on smaller screens */
+		gap: 100px; /* Adjusted gap for very small screens */
+		padding: 15px; /* Adjusted padding around the grid */
 	}
 
 	.membership-option-2 {
-		padding: 15px; /* Slightly reduce padding in cards */
+		padding:100px; /* Adjusted padding for very small screens */
 	}
 
 	.membership-option-2 h2 {
-		font-size: 1.3em; /* Further reduce heading size on very small screens */
+		font-size: 1.3em;
+	}
+
+	.membership-option-2 li {
+		font-size: 0.95em;
+	}
+
+	.more-info-btn {
+		padding: 12px;
+		font-size: 0.95em;
 	}
 }
 
