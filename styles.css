@@ -208,23 +208,21 @@
 /*about me*/
 
 .background-education {
-	display: flex;
-	justify-content: space-between;
-	max-width: 1200px;
 	margin: 0 auto;
 	padding: 20px;
 	color: #ffffff;
 	font-family: "Nunito Sans", sans-serif;
 }
 
-.education-column,
-.expertise-column {
-	width: 48%;
-}
-
 .expertise-item h3 {
 	font-size: 18px;
 	margin-bottom: 5px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.background-education h2{
+	color: #da6e65;
 }
 
 .expertise-item p {
@@ -242,6 +240,7 @@ h2 {
 	font-size: 24px;
 	margin-bottom: 20px;
 	font-weight: bold;
+	color: #da6e65;
 }
 
 ul {
@@ -419,7 +418,7 @@ h1 {
 }
 
 .cta-button.primary {
-	background-color: #e63946;
+	background-color: #da6e65;
 	color: white;
 }
 
@@ -541,12 +540,6 @@ h1 {
 
 .more-info-btn:hover {
 	background-color: #0056b3;
-}
-
-.education-grid {
-	display: inline-grid;
-	grid-template-columns: auto auto auto;
-	padding: 10px;
 }
 
 .education-item {
@@ -690,7 +683,6 @@ h1 {
 		width: 55px; /* Adjust size for very small screens */
 		height: 55px;
 	}
-	
 }
 
 /*Contact*/

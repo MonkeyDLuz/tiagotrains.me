@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (emailButton) {
 		emailButton.addEventListener("click", function (e) {
 			e.preventDefault();
-			const email = "example@example.com"; // Replace with your email
+			const email = "tiagojjsantos@gmail.com"; // Replace with your email
 			const subject = "Contact Request";
 
 			const name = document.getElementById("name").value;
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function handleEmailClick(e) {
 		e.preventDefault();
-		const email = "example@example.com"; // Replace with your email
+		const email = "tiagojjsantos@gmail.com"; // Replace with your email
 		const subject = "Contact Request";
 
 		// For the footer icon, we'll use placeholder values
