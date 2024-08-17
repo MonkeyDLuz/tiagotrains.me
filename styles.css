@@ -577,6 +577,8 @@ h1 {
 	width: 50px;
 	height: 50px;
 	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .membership-option-2 h2 {
@@ -672,10 +674,6 @@ h1 {
 		padding: 15px; /* Adjusted padding around the grid */
 	}
 
-	.membership-option-2 {
-		padding:100px; /* Adjusted padding for very small screens */
-	}
-
 	.membership-option-2 h2 {
 		font-size: 1.3em;
 	}
@@ -688,6 +686,11 @@ h1 {
 		padding: 12px;
 		font-size: 0.95em;
 	}
+	.membership-option-2 img {
+		width: 55px; /* Adjust size for very small screens */
+		height: 55px;
+	}
+	
 }
 
 /*Contact*/
