@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
 	AOS.init({
-		// You can add global settings here
 		duration: 800,
 		easing: "ease-in-out",
 		once: true,
 	});
-	// You can add other JavaScript functions or event listeners here
 
 	const emailButton = document.getElementById("emailButton");
 	if (emailButton) {
 		emailButton.addEventListener("click", function (e) {
 			e.preventDefault();
-			const email = "tiagojjsantos@gmail.com"; // Replace with your email
+			const email = "tiagojjsantos@gmail.com";
 			const subject = "Contact Request";
 
 			const name = document.getElementById("name").value;
@@ -22,10 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			let body;
 
 			if (message.trim() !== "") {
-				// If there's a message in the form, use it
 				body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nMessage:\n${message}`;
 			} else {
-				// If no message, use the predetermined text
 				body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nI would like to get in touch with you.`;
 			}
 
@@ -73,10 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function handleEmailClick(e) {
 		e.preventDefault();
-		const email = "tiagojjsantos@gmail.com"; // Replace with your email
+		const email = "tiagojjsantos@gmail.com";
 		const subject = "Contact Request";
 
-		// For the footer icon, we'll use placeholder values
 		const name = "Visitor";
 		const userEmail = "visitor@example.com";
 		const phone = "N/A";
@@ -100,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	moreInfoButtons.forEach(button => {
 		button.addEventListener("click", function () {
 			const membershipType = this.getAttribute("data-membership");
-			const email = "example@example.com"; // Replace with your email address
+			const email = "tiagojjsantos@gmail.com";
 			const subject = `More Information About ${membershipType} Membership`;
 			const body = `Hello,\n\nI would like to get more information about the ${membershipType} membership option. Could you please provide me with additional details?\n\nThank you!`;
 
