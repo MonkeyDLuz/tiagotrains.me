@@ -60,11 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	});
+	
 	const footerEmailIcon = document.querySelector(
 		'.footer-social a[href="#"] img[alt="email"]'
 	);
 	if (footerEmailIcon) {
 		footerEmailIcon.parentElement.addEventListener("click", handleEmailClick);
+	}
+
+	const footerEmailLink = document.getElementById("footerEmailLink");
+	if (footerEmailLink) {
+		footerEmailLink.addEventListener("click", handleEmailClick);
 	}
 
 	function handleEmailClick(e) {
