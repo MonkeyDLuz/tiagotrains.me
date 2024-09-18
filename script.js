@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (emailButton) {
 		emailButton.addEventListener("click", function (e) {
 			e.preventDefault();
-			const email = "tiagojjsantos@gmail.com";
+			const email = "tiago@houseofhealth.com";
 			const subject = "Contact Request";
 
 			const name = document.getElementById("name").value;
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function handleEmailClick(e) {
 		e.preventDefault();
-		const email = "tiagojjsantos@gmail.com";
+		const email = "tiago@houseofhealth.com";
 		const subject = "Contact Request";
 
 		const name = "Visitor";
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	moreInfoButtons.forEach(button => {
 		button.addEventListener("click", function () {
 			const membershipType = this.getAttribute("data-membership");
-			const email = "tiagojjsantos@gmail.com";
+			const email = "tiago@houseofhealth.com";
 			const subject = `More Information About ${membershipType} Membership`;
 			const body = `Hello,\n\nI would like to get more information about the ${membershipType} membership option. Could you please provide me with additional details?\n\nThank you!`;
 
