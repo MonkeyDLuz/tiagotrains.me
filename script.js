@@ -5,36 +5,65 @@ document.addEventListener("DOMContentLoaded", function () {
 		once: true,
 	});
 
-	const emailButton = document.getElementById("emailButton");
-	if (emailButton) {
-		emailButton.addEventListener("click", function (e) {
-			e.preventDefault();
-			const email = "tiago@houseofhealth.com";
-			const subject = "Contact Request";
+	// Unified email function
+	function handleEmailClick(e, customSubject = "", customBody = "") {
+		e.preventDefault();
+		const email = "tiago@houseofhealth.com";
+		let subject = customSubject || "Contact Request";
+		let body = customBody;
 
-			const name = document.getElementById("name").value;
-			const userEmail = document.getElementById("email").value;
-			const phone = document.getElementById("phone").value;
-			const message = document.getElementById("message").value;
+		if (!customBody) {
+			const name = document.getElementById("name")?.value || "Visitor";
+			const userEmail =
+				document.getElementById("email")?.value || "visitor@example.com";
+			const phone = document.getElementById("phone")?.value || "N/A";
+			const message = document.getElementById("message")?.value || "";
 
-			let body;
+			body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\n`;
+			body +=
+				message.trim() !== ""
+					? `Message:\n${message}`
+					: "I would like to get in touch with you.";
+		}
 
-			if (message.trim() !== "") {
-				body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nMessage:\n${message}`;
-			} else {
-				body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nI would like to get in touch with you.`;
-			}
-
-			const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-				subject
-			)}&body=${encodeURIComponent(body)}`;
-
-			window.location.href = mailtoLink;
-		});
+		const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+			subject
+		)}&body=${encodeURIComponent(body)}`;
+		window.location.href = mailtoLink;
 	}
 
-	const faqItems = document.querySelectorAll(".faq-item");
+	// Contact form email button
+	const emailButton = document.getElementById("emailButton");
+	if (emailButton) {
+		emailButton.addEventListener("click", handleEmailClick);
+	}
 
+	// Footer email icons
+	const footerEmailIcon = document.querySelector(
+		'.footer-social a[href="#"] img[alt="email"]'
+	);
+	if (footerEmailIcon) {
+		footerEmailIcon.parentElement.addEventListener("click", handleEmailClick);
+	}
+
+	const footerEmailLink = document.getElementById("footerEmailLink");
+	if (footerEmailLink) {
+		footerEmailLink.addEventListener("click", handleEmailClick);
+	}
+
+	// More info buttons
+	const moreInfoButtons = document.querySelectorAll(".more-info-btn");
+	moreInfoButtons.forEach(button => {
+		button.addEventListener("click", function (e) {
+			const membershipType = this.getAttribute("data-membership");
+			const subject = `More Information About ${membershipType} Membership`;
+			const body = `Hello,\n\nI would like to get more information about the ${membershipType} membership option. Could you please provide me with additional details?\n\nThank you!`;
+			handleEmailClick(e, subject, body);
+		});
+	});
+
+	// FAQ functionality
+	const faqItems = document.querySelectorAll(".faq-item");
 	faqItems.forEach((item, index) => {
 		const question = item.querySelector("h2");
 		const answer = item.querySelector("p");
@@ -60,55 +89,28 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	});
-	
-	const footerEmailIcon = document.querySelector(
-		'.footer-social a[href="#"] img[alt="email"]'
-	);
-	if (footerEmailIcon) {
-		footerEmailIcon.parentElement.addEventListener("click", handleEmailClick);
-	}
-
-	const footerEmailLink = document.getElementById("footerEmailLink");
-	if (footerEmailLink) {
-		footerEmailLink.addEventListener("click", handleEmailClick);
-	}
-
-	function handleEmailClick(e) {
-		e.preventDefault();
-		const email = "tiago@houseofhealth.com";
-		const subject = "Contact Request";
-
-		const name = "Visitor";
-		const userEmail = "visitor@example.com";
-		const phone = "N/A";
-		const message = "";
-
-		let body;
-
-		if (message.trim() !== "") {
-			body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nMessage:\n${message}`;
-		} else {
-			body = `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nI would like to get in touch with you.`;
-		}
-
-		const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-			subject
-		)}&body=${encodeURIComponent(body)}`;
-
-		window.location.href = mailtoLink;
-	}
-	const moreInfoButtons = document.querySelectorAll(".more-info-btn");
-	moreInfoButtons.forEach(button => {
-		button.addEventListener("click", function () {
-			const membershipType = this.getAttribute("data-membership");
-			const email = "tiago@houseofhealth.com";
-			const subject = `More Information About ${membershipType} Membership`;
-			const body = `Hello,\n\nI would like to get more information about the ${membershipType} membership option. Could you please provide me with additional details?\n\nThank you!`;
-
-			const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-				subject
-			)}&body=${encodeURIComponent(body)}`;
-			window.location.href = mailtoLink;
-		});
-	});
 });
+
+// TrustPilot initialization
+(function (w, d, s, r, n) {
+	w.TrustpilotObject = n;
+	w[n] =
+		w[n] ||
+		function () {
+			(w[n].q = w[n].q || []).push(arguments);
+		};
+	a = d.createElement(s);
+	a.async = 1;
+	a.src = r;
+	a.type = "text/java" + s;
+	f = d.getElementsByTagName(s)[0];
+	f.parentNode.insertBefore(a, f);
+})(
+	window,
+	document,
+	"script",
+	"https://invitejs.trustpilot.com/tp.min.js",
+	"tp"
+);
+
+tp("register", "GzOMvDTpDfkv5By0");
