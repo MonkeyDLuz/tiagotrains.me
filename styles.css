@@ -1,6 +1,42 @@
 /* styles.css */
 
-/*Menu*/
+/* General styles */
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background-image: url(/Images/Black_Background.jpg);
+	font-family: "Nunito Sans", sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+
+/* Header and Menu styles */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.top-menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.top-menu .logo {
+	display: flex;
+	align-items: center;
+}
+
+.top-menu .logo img {
+	width: 50px;
+	height: 50px;
+}
 
 .menu-toggle {
 	display: none;
@@ -11,45 +47,28 @@
 	cursor: pointer;
 }
 
-.top-menu {
-	padding: 10px 20px;
+.menu-items {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.top-menu .logo {
-	display: flex;
-	align-items: center;
-}
-
-.top-menu .logo img {
-	width: 80px;
-	height: 80px;
-	object-fit: contain;
-}
-
-.top-menu ul {
 	list-style-type: none;
-	padding: 0;
 	margin: 0;
-	display: flex;
+	padding: 0;
 }
 
-.top-menu ul li {
+.menu-items li {
 	margin-left: 20px;
 }
 
-.top-menu ul li a {
+.menu-items li a {
 	color: #da6e65;
 	text-decoration: none;
 	font-weight: bold;
 	position: relative;
 	padding-bottom: 5px;
 	font-size: 20px;
+	transition: color 0.3s ease;
 }
 
-.top-menu ul li a::after {
+.menu-items li a::after {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -61,313 +80,29 @@
 	transition: transform 0.3s ease-in-out;
 }
 
-.top-menu ul li a:hover::after,
-.top-menu ul li a.current::after {
+.menu-items li a:hover::after,
+.menu-items li a.current::after {
 	transform: scaleX(1);
 }
 
-.top-menu ul li a.current {
+.menu-items li a:hover,
+.menu-items li a.current {
 	color: #ffffff;
 }
 
-@media (max-width: 1024px) {
-	.top-menu ul li a {
-		font-size: 18px;
-	}
-
-	.hero h1 {
-		font-size: 42px;
-	}
-
-	.hero p {
-		font-size: 16px;
-	}
-
-	#trainer-info,
-	#membership-info,
-	#testimonials {
-		padding-left: 5%;
-		padding-right: 5%;
-	}
-
-	.membership-grid {
-		gap: 40px;
-	}
-
-	.membership-item {
-		flex-direction: column;
-	}
-
-	.membership-content,
-	.membership-image {
-		max-width: 100%;
-		width: 100%;
-	}
-
-	.membership-image img {
-		max-height: 350px;
-	}
-}
-
-@media (max-width: 768px) {
-	.top-menu {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.top-menu ul {
-		flex-direction: column;
-		align-items: center;
-		margin-top: 20px;
-	}
-
-	.top-menu ul li {
-		margin: 10px 0;
-	}
-
-	.top-menu ul li a {
-		font-size: 16px;
-	}
-
-	.hero {
-		height: auto;
-		padding: 30px;
-	}
-
-	.hero h1 {
-		font-size: 36px;
-	}
-
-	.hero p {
-		font-size: 14px;
-	}
-
-	.cta-buttons {
-		flex-direction: column;
-		align-items: stretch;
-	}
-
-	.cta-button {
-		margin-bottom: 10px;
-	}
-
-	#trainer-info,
-	#membership-info,
-	#testimonials {
-		padding-left: 3%;
-		padding-right: 3%;
-	}
-
-	.membership-grid {
-		gap: 30px;
-	}
-
-	.membership-content h3 {
-		font-size: 1.5em;
-	}
-
-	.membership-content p {
-		font-size: 1em;
-	}
-
-	.membership-image img {
-		max-height: 250px;
-	}
-
-	.footer-content {
-		flex-direction: column;
-	}
-
-	.footer-section,
-	.footer-social {
-		margin-bottom: 20px;
-		text-align: center;
-	}
-
-	.footer-bottom {
-		text-align: center;
-	}
-	.menu-toggle {
-		display: block;
-	}
-
-	.menu-items {
-		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.9);
-		padding: 20px;
-		box-sizing: border-box;
-	}
-
-	.menu-items.active {
-		display: block;
-	}
-}
-
-@media (max-width: 480px) {
-	.hero h1 {
-		font-size: 32px;
-	}
-
-	.hero p {
-		font-size: 13px;
-	}
-
-	.membership-content h3 {
-		font-size: 1.3em;
-	}
-
-	.membership-content p {
-		font-size: 0.9em;
-	}
-
-	.membership-image img {
-		max-height: 200px;
-	}
-}
-
-/*about me*/
-
-.background-education {
-	margin: 0 auto;
-	padding: 20px;
-	color: #ffffff;
-	font-family: "Nunito Sans", sans-serif;
-}
-
-.expertise-item h3 {
-	font-size: 18px;
-	margin-bottom: 5px;
-	font-weight: normal;
-	font-style: italic;
-}
-
-.background-education h2 {
-	color: #da6e65;
-}
-
-.expertise-item p {
-	font-size: 14px;
-	line-height: 1.4;
-}
-
-.divider {
-	width: 1px;
-	background-color: #ffffff;
-	margin: 0 20px;
-}
-
-h2 {
-	font-size: 24px;
-	margin-bottom: 20px;
-	font-weight: bold;
-	color: #da6e65;
-}
-
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-li {
-	margin-bottom: 20px;
-}
-
-html,
-body {
-	width: 100%;
-	height: 100%;
-	background-image: url(/Images/Black_Background.jpg);
-	font-family: "Rubic", sans-serif;
-	margin: 0;
-	padding: 0;
-	color: #ffffff;
-	font-family: "Nunito Sans", sans-serif;
-}
-
-header {
-	color: #ffffff;
-	padding: 1rem;
-}
-
-nav ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-nav ul li {
-	display: inline;
-	margin-right: 1rem;
-}
-
-nav ul li a {
-	color: #ffffff;
-	text-decoration: none;
-}
-
+/* Main content adjustment */
 main {
-	padding: 2rem;
+	padding-top: 70px; /* Adjust based on your header height */
 }
+
 .main-index {
-	padding: 0rem;
+	padding: 0;
 }
 
-.main-aboutme {
-	padding: 2rem;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-h1 {
-	text-align: center;
-	margin-bottom: 2rem;
-}
-
-.about-content {
-	display: flex;
-	align-items: flex-start;
-	gap: 2rem;
-}
-
-.image-container {
-	flex: 1;
-	max-width: 50%;
-}
-
-.image-container img {
-	margin-top: 20px;
-	width: 80%;
-	height: auto;
-	object-fit: cover;
-	border-radius: 8px;
-	margin-left: 15%;
-}
-
-.text-container {
-	flex: 1;
-}
-
-@media (max-width: 768px) {
-	.about-content {
-		flex-direction: column;
-	}
-
-	.image-container {
-		max-width: 100%;
-		margin-bottom: 1rem;
-	}
-}
-
-.hero-section {
-	margin-left: 0rem;
-}
-
+/* Hero section */
 .hero {
 	position: relative;
-	height: 70vh;
+	height: calc(70vh - 70px); /* Subtract header height from hero height */
 	display: flex;
 	align-items: flex-end;
 	padding: 50px;
@@ -423,6 +158,7 @@ h1 {
 	margin-bottom: 30px;
 }
 
+/* CTA Buttons */
 .cta-buttons {
 	display: flex;
 	gap: 10px;
@@ -447,16 +183,13 @@ h1 {
 	border: 2px solid white;
 }
 
+/* Trainer info and memberships */
 #trainer-info,
 #membership-info,
 #testimonials {
-	padding-left: 2rem;
-}
-
-#trainer-info {
 	padding-left: 10%;
-	padding-top: 5%;
 	padding-right: 10%;
+	padding-top: 5%;
 }
 
 #memberships {
@@ -469,8 +202,7 @@ h1 {
 	font-size: 2.5em;
 }
 
-/*Membership*/
-
+/* Membership styles */
 .membership-grid {
 	display: flex;
 	flex-direction: column;
@@ -519,51 +251,7 @@ h1 {
 	flex-direction: row-reverse;
 }
 
-@media (max-width: 768px) {
-	.membership-item,
-	.membership-item.image-left {
-		flex-direction: column;
-	}
-
-	.membership-content,
-	.membership-image {
-		max-width: 100%;
-		width: 100%;
-	}
-
-	.membership-image img {
-		max-height: 300px;
-	}
-}
-
-.membership-option-2 {
-	transition: transform 0.3s ease-in-out;
-}
-.membership-option-2:hover {
-	transform: scale(1.05);
-}
-
-.more-info-btn {
-	display: block;
-	width: 100%;
-	padding: 10px;
-	margin-top: auto;
-	background-color: #da6e65;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.more-info-btn:hover {
-	background-color: #0056b3;
-}
-
-.education-item {
-	padding: 20px;
-}
-
+/* Membership option styles */
 .membership-grid-2 {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -582,6 +270,10 @@ h1 {
 	border: 2px solid #ffffff;
 	transition: transform 0.3s ease-in-out;
 	height: 100%;
+}
+
+.membership-option-2:hover {
+	transform: scale(1.05);
 }
 
 .membership-option-2 img {
@@ -633,78 +325,77 @@ h1 {
 	background-color: #4caf50;
 }
 
-@media (max-width: 1200px) {
-	.membership-grid-2 {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 100px;
-	}
+.more-info-btn {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-top: auto;
+	background-color: #da6e65;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-	.membership-grid-2 {
-		grid-template-columns: 1fr;
-		gap: 100px;
-		padding: 20px;
-	}
-
-	.membership-option-2 {
-		padding: 30px;
-		margin-bottom: 0;
-		max-width: 100%;
-	}
-
-	.membership-option-2 h2 {
-		font-size: 1.4em;
-		margin-bottom: 15px;
-	}
-
-	.membership-option-2 ul {
-		padding-left: 0;
-		margin-bottom: 20px;
-	}
-
-	.membership-option-2 li {
-		text-align: center;
-		margin-bottom: 10px;
-	}
-
-	.more-info-btn {
-		padding: 15px;
-		font-size: 1em;
-	}
-
-	.banner {
-		font-size: 0.8em;
-		padding: 5px 10px;
-	}
+.more-info-btn:hover {
+	background-color: #0056b3;
 }
 
-@media (max-width: 480px) {
-	.membership-grid-2 {
-		gap: 100px;
-		padding: 15px;
-	}
-
-	.membership-option-2 h2 {
-		font-size: 1.3em;
-	}
-
-	.membership-option-2 li {
-		font-size: 0.95em;
-	}
-
-	.more-info-btn {
-		padding: 12px;
-		font-size: 0.95em;
-	}
-	.membership-option-2 img {
-		width: 55px;
-		height: 55px;
-	}
+/* About me styles */
+.main-aboutme {
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-/*Contact*/
+.about-content {
+	display: flex;
+	align-items: flex-start;
+	gap: 2rem;
+}
 
+.image-container {
+	flex: 1;
+	max-width: 50%;
+}
+
+.image-container img {
+	margin-top: 20px;
+	width: 80%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-left: 15%;
+}
+
+.text-container {
+	flex: 1;
+}
+
+.background-education {
+	margin: 0 auto;
+	padding: 20px;
+	color: #ffffff;
+}
+
+.expertise-item h3 {
+	font-size: 18px;
+	margin-bottom: 5px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.background-education h2 {
+	color: #da6e65;
+}
+
+.expertise-item p {
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+/* Contact styles */
 .contact-container {
 	max-width: 600px;
 	margin: 0 auto;
@@ -752,34 +443,11 @@ button[type="submit"]:hover {
 	background-color: #c62828;
 }
 
-@media (max-width: 768px) {
-	.contact-container {
-		padding: 10px;
-	}
-}
-
-/*FAQ*/
-
+/* FAQ styles */
 .faq-container {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 20px;
-}
-
-h1 {
-	text-align: center;
-	margin-bottom: 30px;
-}
-
-.faq-container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 20px;
-}
-
-h1 {
-	text-align: center;
-	margin-bottom: 30px;
 }
 
 .faq-list {
@@ -833,18 +501,7 @@ h1 {
 	opacity: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Lato", serif;
-	font-weight: 700;
-}
-
-/*Footer*/
-
+/* Footer styles */
 footer {
 	padding: 40px 20px;
 	font-family: "Roboto", sans-serif;
@@ -852,33 +509,20 @@ footer {
 
 .footer-content {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-.footer-section h3 {
-	font-size: 18px;
-	margin-bottom: 15px;
-}
-
-.footer-section ul {
-	list-style-type: none;
-	padding-top: 100px;
-}
-
-.footer-section ul li {
-	margin-bottom: 10px;
-}
-
 .footer-social {
 	display: flex;
-	align-items: center;
+	justify-content: center;
 	margin-bottom: 20px;
 }
 
 .footer-social a {
-	margin-left: 0 10px;
+	margin: 0 10px;
 }
 
 .footer-social img {
@@ -911,9 +555,329 @@ footer {
 	text-decoration: none;
 }
 
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Lato", serif;
+	font-weight: 700;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: #da6e65;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+	.membership-grid-2 {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 40px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.top-menu ul li a {
+		font-size: 18px;
+	}
+
+	.hero h1 {
+		font-size: 42px;
+	}
+
+	.hero p {
+		font-size: 16px;
+	}
+
+	#trainer-info,
+	#membership-info,
+	#testimonials {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.membership-item {
+		flex-direction: column;
+	}
+
+	.membership-content,
+	.membership-image {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.membership-image img {
+		max-height: 350px;
+	}
+}
+@media (max-width: 768px) {
+	.menu-toggle {
+		display: block;
+	}
+
+	.menu-items {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	.menu-items.active {
+		display: flex;
+	}
+
+	.menu-items li {
+		margin: 10px 0;
+	}
+
+	.menu-items li a {
+		font-size: 16px;
+	}
+
+	.top-menu {
+		flex-wrap: wrap;
+	}
+
+	.top-menu .logo {
+		order: 1;
+	}
+
+	.menu-toggle {
+		order: 2;
+	}
+
+	.menu-items {
+		order: 3;
+		width: 100%;
+	}
+
+	.hero {
+		height: auto;
+		padding: 30px;
+	}
+
+	.hero h1 {
+		font-size: 36px;
+	}
+
+	.hero p {
+		font-size: 14px;
+	}
+
+	.cta-buttons {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.cta-button {
+		margin-bottom: 10px;
+	}
+
+	#trainer-info,
+	#membership-info,
+	#testimonials {
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+
+	.membership-grid {
+		gap: 30px;
+	}
+
+	.membership-content h3 {
+		font-size: 1.5em;
+	}
+
+	.membership-content p {
+		font-size: 1em;
+	}
+
+	.membership-image img {
+		max-height: 250px;
+	}
+
+	.about-content {
+		flex-direction: column;
+	}
+
+	.image-container {
+		max-width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	.footer-content {
+		flex-direction: column;
+	}
+
+	.footer-section,
+	.footer-social {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.footer-bottom {
+		text-align: center;
+	}
+
+	.membership-grid-2 {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.membership-option-2 {
+		padding: 30px;
+		margin-bottom: 0;
+		max-width: 100%;
+	}
+
+	.membership-option-2 h2 {
+		font-size: 1.4em;
+	}
+
+	.membership-option-2 ul {
+		padding-left: 0;
+		margin-bottom: 20px;
+	}
+
+	.membership-option-2 li {
+		text-align: center;
+	}
+
+	.more-info-btn {
+		padding: 15px;
+		font-size: 1em;
+	}
+
+	.banner {
+		font-size: 0.8em;
+		padding: 5px 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-content p {
+		font-size: 16px;
+	}
+
+	.cta-buttons {
+		flex-direction: column;
+	}
+
+	.cta-button {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.hero h1 {
+		font-size: 32px;
+	}
+
+	.hero p {
+		font-size: 13px;
+	}
+
+	.membership-content h3 {
+		font-size: 1.3em;
+	}
+
+	.membership-content p {
+		font-size: 0.9em;
+	}
+
+	.membership-image img {
+		max-height: 200px;
+	}
+
+	.membership-grid-2 {
+		gap: 40px;
+		padding: 15px;
+	}
+
+	.membership-option-2 h2 {
+		font-size: 1.3em;
+	}
+
+	.membership-option-2 li {
+		font-size: 0.95em;
+	}
+
+	.more-info-btn {
+		padding: 12px;
+		font-size: 0.95em;
+	}
+
+	.membership-option-2 img {
+		width: 55px;
+		height: 55px;
+	}
+}
+
+/* Additional utility classes and adjustments */
+.divider {
+	width: 1px;
+	background-color: #ffffff;
+	margin: 0 20px;
+}
+
+.education-item {
+	padding: 20px;
+}
+
 #logo-footer {
 	width: 25px;
 	height: auto;
 	vertical-align: middle;
 	margin: 0 5px;
 }
+
+/* Ensure all list items have consistent styling */
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 20px;
+}
+
+/* Adjust padding for specific sections if needed */
+.main-index {
+	padding: 0rem;
+}
+
+/* Ensure proper spacing in the contact form */
+.contact-container {
+	padding: 20px;
+}
+
+@media (max-width: 768px) {
+	.contact-container {
+		padding: 10px;
+	}
+}
+
+/* Ensure FAQ items are properly styled */
+.faq-container {
+	padding: 20px;
+}
+
+/* Ensure proper spacing and alignment in the footer */
+.footer-social a {
+	margin: 0 10px;
+}
+
+/* End of CSS file */
