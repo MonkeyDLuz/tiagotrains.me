@@ -1,6 +1,16 @@
 /* styles.css */
 
 /*Menu*/
+
+.menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	color: #da6e65;
+	cursor: pointer;
+}
+
 .top-menu {
 	padding: 10px 20px;
 	display: flex;
@@ -176,6 +186,24 @@
 
 	.footer-bottom {
 		text-align: center;
+	}
+	.menu-toggle {
+		display: block;
+	}
+
+	.menu-items {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 20px;
+		box-sizing: border-box;
+	}
+
+	.menu-items.active {
+		display: block;
 	}
 }
 
@@ -846,10 +874,11 @@ footer {
 .footer-social {
 	display: flex;
 	align-items: center;
+	margin-bottom: 20px;
 }
 
 .footer-social a {
-	margin-left: 10px;
+	margin-left: 0 10px;
 }
 
 .footer-social img {
@@ -857,16 +886,24 @@ footer {
 	height: 30px;
 }
 
+.trustpilot-widget {
+	margin-bottom: 20px;
+}
+
 .footer-bottom {
-	margin-top: 40px;
-	text-align: right;
+	text-align: center;
 	font-size: 12px;
 	color: #ffffff;
 }
 
 .footer-bottom img {
-	max-width: 150px;
+	width: 50px;
+	height: 50px;
 	margin-bottom: 10px;
+}
+
+.footer-bottom p {
+	margin: 5px 0;
 }
 
 .footer-bottom a {

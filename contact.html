@@ -16,9 +16,11 @@
 			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
+		<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="/script.js" defer></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	</head>
 	<body>
 		<header>
@@ -26,11 +28,14 @@
 				<a href="index.html" class="logo">
 					<img src="/Images/Tiago.png" alt="Your Logo" width="50" height="50" />
 				</a>
-				<ul>
+				<button class="menu-toggle" aria-label="Toggle menu">
+					<i class="fas fa-bars"></i>
+				</button>
+				<ul class="menu-items">
 					<li><a href="about.html">About Me</a></li>
 					<li><a href="memberships.html">Memberships</a></li>
 					<li><a href="faq.html">FAQ</a></li>
-					<li><a href="contact.html" class="current">Contact</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -65,29 +70,24 @@
 		<footer>
 			<div class="footer-content">
 				<div class="footer-social">
-					<a href="https://www.facebook.com/tiago.alvesdossantos"
-						><img src="/Images/facebook.png" alt="Facebook"
-					/></a>
-					<a href="https://www.instagram.com/tiagotrains.me/"
-						><img src="/Images/instagram.png" alt="Instagram"
-					/></a>
+					<a href="https://www.facebook.com/tiago.alvesdossantos"><img src="/Images/facebook.png" alt="Facebook" /></a>
+					<a href="https://www.instagram.com/tiagotrains.me/"><img src="/Images/instagram.png" alt="Instagram" /></a>
 					<a href="#"><img src="/Images/linkedin.png" alt="LinkedIn" /></a>
-					<a href="#" id="footerEmailLink"
-						><img src="/Images/email (1).png" alt="email"
-					/></a>
+					<a href="#" id="footerEmailLink"><img src="/Images/email (1).png" alt="email" /></a>
+				</div>
+				<div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" 
+				data-businessunit-id="66e548424358e36e3659cad4" data-style-height="52px" data-style-width="100%">
+					<a href="https://www.trustpilot.com/review/tiagotrains.me" target="_blank" rel="noopener">Trustpilot</a>
 				</div>
 				<div class="footer-bottom">
-					<img
-						src="/Images/Tiago.png"
-						alt="Self Esteem Brands Logo"
-						width="50"
-						height="50"
-					/>
+					<img src="/Images/Tiago.png" alt="Self Esteem Brands Logo" width="50" height="50"/>
 					<p>People, Purpose, Health, Play®</p>
 					<p>©Tiagotrains.me 2024. All rights reserved.</p>
 					<a href="#">Cookie Settings</a>
 				</div>
 			</div>
 		</footer>
+	</body>
+</html>
 	</body>
 </html>

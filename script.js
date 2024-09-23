@@ -89,6 +89,22 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	});
+
+	const menuToggle = document.querySelector(".menu-toggle");
+	const menuItems = document.querySelector(".menu-items");
+
+	menuToggle.addEventListener("click", function () {
+		menuItems.classList.toggle("active");
+	});
+
+	// Close menu when clicking outside
+	document.addEventListener("click", function (event) {
+		const isClickInside =
+			menuToggle.contains(event.target) || menuItems.contains(event.target);
+		if (!isClickInside && menuItems.classList.contains("active")) {
+			menuItems.classList.remove("active");
+		}
+	});
 });
 
 // TrustPilot initialization
