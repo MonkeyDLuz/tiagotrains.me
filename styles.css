@@ -1,24 +1,50 @@
-/* styles.css */
-
-/* General styles */
-html,
-body {
-	width: 100%;
-	height: 100%;
-	background-image: url(/Images/Black_Background.jpg);
-	font-family: "Nunito Sans", sans-serif;
+/* Global Styles */
+body,
+html {
 	margin: 0;
 	padding: 0;
-	color: #ffffff;
+	font-family: "Nunito Sans", sans-serif;
+	background-color: #000;
+	color: #fff;
 }
 
-/* Header and Menu styles */
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Lato", serif;
+	font-weight: 700;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: #da6e65;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 20px;
+}
+
+/* Header and Navigation */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
 }
 
 .top-menu {
@@ -26,63 +52,48 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
+	position: relative;
+	z-index: 1001;
 }
 
-.top-menu .logo {
-	display: flex;
-	align-items: center;
+.logo {
+	flex-shrink: 0;
 }
 
-.top-menu .logo img {
+.logo img {
+	/* Adjust size as needed */
 	width: 50px;
 	height: 50px;
 }
 
-.menu-toggle {
-	display: none;
-	background: none;
-	border: none;
-	font-size: 1.5rem;
-	color: #da6e65;
-	cursor: pointer;
+.top-menu .logo {
+	display: flex;
+	align-items: left;
+}
+
+.top-menu .logo img {
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
 }
 
 .menu-items {
-	display: flex;
 	list-style-type: none;
-	margin: 0;
 	padding: 0;
+	margin: 20px 0;
+	display: none;
 }
 
 .menu-items li {
-	margin-left: 20px;
+	margin: 10px 0;
 }
 
 .menu-items li a {
 	color: #da6e65;
 	text-decoration: none;
 	font-weight: bold;
-	position: relative;
-	padding-bottom: 5px;
-	font-size: 20px;
+	font-size: 16px;
 	transition: color 0.3s ease;
-}
-
-.menu-items li a::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: #da6e65;
-	transform: scaleX(0);
-	transition: transform 0.3s ease-in-out;
-}
-
-.menu-items li a:hover::after,
-.menu-items li a.current::after {
-	transform: scaleX(1);
 }
 
 .menu-items li a:hover,
@@ -90,19 +101,58 @@ header {
 	color: #ffffff;
 }
 
-/* Main content adjustment */
+.menu-items.show {
+	display: block;
+}
+
+.menu-items a {
+	color: #e17e73;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Burger menu styles */
+.burger-menu {
+	display: none;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.burger-menu div {
+	width: 25px;
+	height: 3px;
+	background-color: #da6e65;
+	margin: 5px 0;
+	transition: 0.4s;
+}
+
+/* Burger menu animation */
+.burger-menu.active div:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active div:nth-child(2) {
+	opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Main Content */
 main {
-	padding-top: 70px; /* Adjust based on your header height */
+	padding: 2rem;
 }
 
 .main-index {
 	padding: 0;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
 	position: relative;
-	height: calc(70vh - 70px); /* Subtract header height from hero height */
+	height: 70vh;
 	display: flex;
 	align-items: flex-end;
 	padding: 50px;
@@ -158,6 +208,13 @@ main {
 	margin-bottom: 30px;
 }
 
+.hero,
+main,
+footer {
+	position: relative;
+	z-index: 1;
+}
+
 /* CTA Buttons */
 .cta-buttons {
 	display: flex;
@@ -183,7 +240,12 @@ main {
 	border: 2px solid white;
 }
 
-/* Trainer info and memberships */
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+/* Trainer Info and Memberships */
 #trainer-info,
 #membership-info,
 #testimonials {
@@ -202,7 +264,7 @@ main {
 	font-size: 2.5em;
 }
 
-/* Membership styles */
+/* Membership Styles */
 .membership-grid {
 	display: flex;
 	flex-direction: column;
@@ -251,11 +313,10 @@ main {
 	flex-direction: row-reverse;
 }
 
-/* Membership option styles */
 .membership-grid-2 {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 20px;
+	gap: 70px;
 	padding: 20px;
 }
 
@@ -290,8 +351,6 @@ main {
 }
 
 .membership-option-2 ul {
-	list-style-type: none;
-	padding: 0;
 	text-align: left;
 	color: rgb(255, 255, 255);
 	flex-grow: 1;
@@ -299,7 +358,6 @@ main {
 
 .membership-option-2 li {
 	margin-bottom: 10px;
-	color: rgb(255, 255, 255);
 }
 
 .membership-option-2.highlighted {
@@ -314,7 +372,6 @@ main {
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	background-color: #e63946;
 	color: white;
 	padding: 5px 10px;
 	border-radius: 4px;
@@ -342,7 +399,7 @@ main {
 	background-color: #0056b3;
 }
 
-/* About me styles */
+/* About Me */
 .main-aboutme {
 	padding: 2rem;
 	max-width: 1200px;
@@ -386,16 +443,12 @@ main {
 	font-style: italic;
 }
 
-.background-education h2 {
-	color: #da6e65;
-}
-
 .expertise-item p {
 	font-size: 14px;
 	line-height: 1.4;
 }
 
-/* Contact styles */
+/* Contact */
 .contact-container {
 	max-width: 600px;
 	margin: 0 auto;
@@ -443,7 +496,7 @@ button[type="submit"]:hover {
 	background-color: #c62828;
 }
 
-/* FAQ styles */
+/* FAQ */
 .faq-container {
 	max-width: 800px;
 	margin: 0 auto;
@@ -501,15 +554,16 @@ button[type="submit"]:hover {
 	opacity: 0;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
 	padding: 40px 20px;
 	font-family: "Roboto", sans-serif;
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 .footer-content {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -517,12 +571,11 @@ footer {
 
 .footer-social {
 	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
+	align-items: center;
 }
 
 .footer-social a {
-	margin: 0 10px;
+	margin-right: 15px;
 }
 
 .footer-social img {
@@ -531,11 +584,22 @@ footer {
 }
 
 .trustpilot-widget {
-	margin-bottom: 20px;
+	text-align: center;
+	margin: 0 20px;
 }
 
 .footer-bottom {
-	text-align: center;
+	text-align: right;
+}
+
+.footer-bottom ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-bottom li {
+	margin-bottom: 5px;
 	font-size: 12px;
 	color: #ffffff;
 }
@@ -546,49 +610,29 @@ footer {
 	margin-bottom: 10px;
 }
 
-.footer-bottom p {
-	margin: 5px 0;
-}
-
 .footer-bottom a {
 	color: #ffffff;
 	text-decoration: none;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Lato", serif;
-	font-weight: 700;
+#logo-footer {
+	width: 25px;
+	height: auto;
+	vertical-align: middle;
+	margin: 0 5px;
 }
 
-h1 {
-	text-align: center;
-	margin-bottom: 2rem;
-}
-
-h2 {
-	font-size: 24px;
-	margin-bottom: 20px;
-	font-weight: bold;
-	color: #da6e65;
-}
-
-/* Responsive styles */
+/* Media Queries */
 @media (max-width: 1200px) {
 	.membership-grid-2 {
 		grid-template-columns: repeat(2, 1fr);
-		gap: 40px;
+		gap: 70px;
 	}
 }
 
 @media (max-width: 1024px) {
-	.top-menu ul li a {
-		font-size: 18px;
+	.menu-items {
+		margin-top: 10px;
 	}
 
 	.hero h1 {
@@ -616,58 +660,92 @@ h2 {
 		width: 100%;
 	}
 
+	.membership-image {
+		order: -1;
+	}
+
 	.membership-image img {
 		max-height: 350px;
 	}
 }
-@media (max-width: 768px) {
-	.menu-toggle {
-		display: block;
-	}
 
+@media screen and (min-width: 769px) {
 	.menu-items {
 		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.9);
-		flex-direction: column;
-		padding: 20px;
-	}
-
-	.menu-items.active {
-		display: flex;
 	}
 
 	.menu-items li {
+		margin-left: 20px;
+	}
+
+	.burger-menu {
+		display: block;
+	}
+	.menu-items.show {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 25%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.9);
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.top-menu ul {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 20px;
+	}
+
+	.top-menu ul li {
 		margin: 10px 0;
 	}
 
-	.menu-items li a {
+	.top-menu ul li a {
 		font-size: 16px;
-	}
-
-	.top-menu {
-		flex-wrap: wrap;
-	}
-
-	.top-menu .logo {
-		order: 1;
-	}
-
-	.menu-toggle {
-		order: 2;
-	}
-
-	.menu-items {
-		order: 3;
-		width: 100%;
 	}
 
 	.hero {
 		height: auto;
+		min-height: 35vh; /* Ensure the hero section takes at least the full viewport height */
 		padding: 30px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.video-background video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero-content {
+		position: absolute;
+		bottom: 0;
+		justify-content: center;
+		width: 50%;
+		padding: 20px;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		text-align: center;
+		z-index: 1;
+		border-radius: 2%;
 	}
 
 	.hero h1 {
@@ -695,7 +773,16 @@ h2 {
 	}
 
 	.membership-grid {
-		gap: 30px;
+		gap: 70px;
+	}
+
+	.membership-item,
+	.membership-item:nth-child(even) {
+		flex-direction: column;
+	}
+
+	.membership-image {
+		order: -1;
 	}
 
 	.membership-content h3 {
@@ -712,21 +799,24 @@ h2 {
 
 	.about-content {
 		flex-direction: column;
+		align-items: center;
 	}
 
 	.image-container {
-		max-width: 100%;
 		margin-bottom: 1rem;
 	}
 
 	.footer-content {
 		flex-direction: column;
+		align-items: center;
 	}
 
-	.footer-section,
 	.footer-social {
 		margin-bottom: 20px;
-		text-align: center;
+	}
+
+	.trustpilot-widget {
+		margin: 20px 0;
 	}
 
 	.footer-bottom {
@@ -735,7 +825,8 @@ h2 {
 
 	.membership-grid-2 {
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 70px;
+		padding: 20px;
 	}
 
 	.membership-option-2 {
@@ -766,22 +857,39 @@ h2 {
 		font-size: 0.8em;
 		padding: 5px 10px;
 	}
+
+	.contact-container {
+		padding: 10px;
+	}
+
+	.burger-menu {
+		display: block;
+	}
+
+	.menu-items.show {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 25%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.9);
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+	}
+
+	.menu-items li {
+		margin: 10px 0;
+	}
+
+	.text-container{
+		text-align: center;
+	}
 }
 
 @media (max-width: 480px) {
-	.hero-content p {
-		font-size: 16px;
-	}
-
-	.cta-buttons {
-		flex-direction: column;
-	}
-
-	.cta-button {
-		width: 100%;
-		margin-bottom: 10px;
-	}
-
 	.hero h1 {
 		font-size: 32px;
 	}
@@ -803,8 +911,13 @@ h2 {
 	}
 
 	.membership-grid-2 {
-		gap: 40px;
+		gap: 70px;
 		padding: 15px;
+	}
+
+	.membership-option-2 {
+		padding: 20px;
+		margin-bottom: 30px;
 	}
 
 	.membership-option-2 h2 {
@@ -821,12 +934,26 @@ h2 {
 	}
 
 	.membership-option-2 img {
-		width: 55px;
-		height: 55px;
+		width: 45px;
+		height: 45px;
+	}
+
+	.menu-items.show {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 25%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.9);
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
 	}
 }
 
-/* Additional utility classes and adjustments */
+/* Additional utility classes */
 .divider {
 	width: 1px;
 	background-color: #ffffff;
@@ -836,48 +963,3 @@ h2 {
 .education-item {
 	padding: 20px;
 }
-
-#logo-footer {
-	width: 25px;
-	height: auto;
-	vertical-align: middle;
-	margin: 0 5px;
-}
-
-/* Ensure all list items have consistent styling */
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-li {
-	margin-bottom: 20px;
-}
-
-/* Adjust padding for specific sections if needed */
-.main-index {
-	padding: 0rem;
-}
-
-/* Ensure proper spacing in the contact form */
-.contact-container {
-	padding: 20px;
-}
-
-@media (max-width: 768px) {
-	.contact-container {
-		padding: 10px;
-	}
-}
-
-/* Ensure FAQ items are properly styled */
-.faq-container {
-	padding: 20px;
-}
-
-/* Ensure proper spacing and alignment in the footer */
-.footer-social a {
-	margin: 0 10px;
-}
-
-/* End of CSS file */

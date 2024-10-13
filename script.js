@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		once: true,
 	});
 
-	// Unified email function
+	// Mail function
 	function handleEmailClick(e, customSubject = "", customBody = "") {
 		e.preventDefault();
 		const email = "tiago@houseofhealth.com";
@@ -30,6 +30,35 @@ document.addEventListener("DOMContentLoaded", function () {
 			subject
 		)}&body=${encodeURIComponent(body)}`;
 		window.location.href = mailtoLink;
+	}
+
+	// Burger menu
+	const burgerMenu = document.querySelector(".burger-menu");
+	const menuItems = document.querySelector(".menu-items");
+
+	if (burgerMenu && menuItems) {
+		burgerMenu.addEventListener("click", function () {
+			menuItems.classList.toggle("show");
+			burgerMenu.classList.toggle("active");
+		});
+
+		// Close menu when clicking outside
+		document.addEventListener("click", function (event) {
+			const isClickInside =
+				burgerMenu.contains(event.target) || menuItems.contains(event.target);
+			if (!isClickInside && menuItems.classList.contains("show")) {
+				menuItems.classList.remove("show");
+				burgerMenu.classList.remove("active");
+			}
+		});
+
+		// Close menu when resizing to larger screen
+		window.addEventListener("resize", function () {
+			if (window.innerWidth > 768 && menuItems.classList.contains("show")) {
+				menuItems.classList.remove("show");
+				burgerMenu.classList.remove("active");
+			}
+		});
 	}
 
 	// Contact form email button
@@ -89,26 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	});
-
-	// Mobile menu functionality
-	const menuToggle = document.querySelector(".menu-toggle");
-	const menuItems = document.querySelector(".menu-items");
-
-	if (menuToggle && menuItems) {
-		menuToggle.addEventListener("click", function (e) {
-			e.preventDefault();
-			menuItems.classList.toggle("active");
-		});
-
-		// Close menu when clicking outside
-		document.addEventListener("click", function (event) {
-			const isClickInside =
-				menuToggle.contains(event.target) || menuItems.contains(event.target);
-			if (!isClickInside && menuItems.classList.contains("active")) {
-				menuItems.classList.remove("active");
-			}
-		});
-	}
 });
 
 // TrustPilot initialization
